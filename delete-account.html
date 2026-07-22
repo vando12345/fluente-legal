@@ -7,277 +7,249 @@
   <meta name="description" content="Solicite a exclusão da sua conta e dados do aplicativo Fluente." />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #7c5ce3;
+      --purple-dark: #6a3fd4;
+      --purple-light: #ede9fc;
+      --bg: #f0ecf8;
+      --text: #1a1a2e;
+      --text-sec: #555;
+      --card: #ffffff;
+      --border: #e5e0fa;
+      --red: #ef4444;
+      --red-dark: #dc2626;
+      --red-light: #fef2f2;
+    }
 
     body {
       font-family: 'Nunito', sans-serif;
-      background: #f0ecf8;
+      background: var(--bg);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 24px 16px;
+      padding: 0 0 48px;
     }
 
-    .card {
-      background: #ffffff;
-      border-radius: 28px;
-      box-shadow: 0 8px 40px rgba(124, 92, 227, 0.12);
-      max-width: 560px;
+    /* Header */
+    header {
       width: 100%;
-      padding: 48px 40px;
+      background: linear-gradient(135deg, var(--red-dark), #b91c1c);
+      color: white;
+      padding: 40px 24px 36px;
+      text-align: center;
+      margin-bottom: -20px;
     }
 
-    .logo-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 32px;
-    }
-
-    .logo-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #7c5ce3, #6a3fd4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      flex-shrink: 0;
-    }
-
-    .logo-text h1 {
-      font-size: 22px;
-      font-weight: 900;
-      color: #1a1a2e;
-      line-height: 1.1;
-    }
-
-    .logo-text p {
+    .header-logo { font-size: 44px; margin-bottom: 10px; }
+    .header-app  { font-size: 24px; font-weight: 900; }
+    .header-sub  { font-size: 13px; font-weight: 600; opacity: 0.85; margin-top: 4px; }
+    .header-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50px;
+      padding: 5px 16px;
       font-size: 13px;
-      color: #888;
-      font-weight: 600;
+      font-weight: 800;
     }
 
-    .section-title {
+    /* Card */
+    .card {
+      background: var(--card);
+      border-radius: 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+      max-width: 540px;
+      width: calc(100% - 32px);
+      padding: 40px 36px;
+      margin: 20px auto 0;
+    }
+
+    h2 {
       font-size: 20px;
       font-weight: 900;
-      color: #1a1a2e;
+      color: var(--text);
       margin-bottom: 8px;
     }
 
-    .section-sub {
+    .subtitle {
       font-size: 14px;
-      color: #666;
+      color: var(--text-sec);
       font-weight: 600;
       line-height: 1.6;
       margin-bottom: 28px;
     }
 
-    .steps {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-
-    .step {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .step { display: flex; align-items: flex-start; gap: 14px; }
     .step-num {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #7c5ce3, #6a3fd4);
-      color: white;
-      font-weight: 900;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: white; font-weight: 900; font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
     }
+    .step-body { flex: 1; }
+    .step-body strong { display: block; font-size: 14px; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+    .step-body span { font-size: 13px; font-weight: 600; color: var(--text-sec); line-height: 1.5; }
+    .step-body .highlight { color: var(--red-dark); font-weight: 800; }
 
-    .step-text {
-      font-size: 14px;
-      color: #333;
-      font-weight: 700;
-      line-height: 1.5;
-    }
+    /* Divider */
+    .divider { height: 1px; background: var(--border); margin: 28px 0; }
 
-    .step-text span {
-      color: #7c5ce3;
-    }
-
-    .divider {
-      height: 1px;
-      background: #ede9fc;
-      margin: 28px 0;
-    }
-
-    .what-deleted h3 {
-      font-size: 15px;
-      font-weight: 800;
-      color: #1a1a2e;
+    /* Data deleted section */
+    .data-section h3 {
+      font-size: 14px; font-weight: 800; color: var(--text);
       margin-bottom: 12px;
     }
-
-    .data-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
-
-    .data-item {
+    .data-chip {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #166534;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: #444;
-      font-weight: 600;
+      gap: 6px;
     }
 
-    .data-item .icon { font-size: 16px; }
-
-    .keep-note {
-      background: #fef9c3;
-      border-radius: 14px;
-      padding: 14px 16px;
-      font-size: 13px;
-      color: #92400e;
-      font-weight: 700;
-      line-height: 1.5;
-      margin-bottom: 28px;
+    /* Alerts */
+    .alert {
+      display: flex; gap: 12px;
+      padding: 14px 16px; border-radius: 14px;
+      font-size: 13px; font-weight: 700; line-height: 1.5;
+      margin-bottom: 16px;
     }
+    .alert-red    { background: var(--red-light); color: #991b1b; border-left: 4px solid var(--red); }
+    .alert-yellow { background: #fef9c3; color: #854d0e; border-left: 4px solid #f59e0b; }
+    .alert-icon   { font-size: 18px; flex-shrink: 0; }
 
-    .retention-note {
-      background: #f0ecf8;
-      border-radius: 14px;
-      padding: 14px 16px;
-      font-size: 13px;
-      color: #5b21b6;
-      font-weight: 700;
-      margin-bottom: 28px;
-    }
-
+    /* CTA Button */
     .btn {
-      display: block;
-      width: 100%;
-      background: linear-gradient(135deg, #7c5ce3, #6a3fd4);
-      color: white;
-      text-align: center;
-      padding: 16px 24px;
-      border-radius: 18px;
-      font-size: 16px;
-      font-weight: 900;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 20px rgba(124, 92, 227, 0.35);
+      display: block; width: 100%;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: white; text-align: center;
+      padding: 16px 24px; border-radius: 18px;
+      font-size: 16px; font-weight: 900;
+      text-decoration: none; cursor: pointer; border: none;
+      box-shadow: 0 4px 20px rgba(239,68,68,0.35);
       font-family: 'Nunito', sans-serif;
+      transition: transform 0.15s, box-shadow 0.15s;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(124, 92, 227, 0.45);
-    }
-
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(239,68,68,0.45); }
     .btn:active { transform: translateY(0); }
 
-    .footer {
-      margin-top: 24px;
+    /* Back link */
+    .back-link {
+      display: block; text-align: center;
+      margin-top: 18px;
+      font-size: 13px; font-weight: 700;
+      color: var(--text-sec); text-decoration: none;
+    }
+    .back-link:hover { color: var(--purple); }
+
+    footer {
+      margin-top: 28px;
       text-align: center;
       font-size: 12px;
-      color: #aaa;
+      color: #9ca3af;
       font-weight: 600;
     }
 
     @media (max-width: 480px) {
-      .card { padding: 32px 24px; }
+      .card { padding: 28px 20px; }
+      .data-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="logo-row">
-      <div class="logo-icon">🐦</div>
-      <div class="logo-text">
-        <h1>Fluente</h1>
-        <p>Aprenda Idiomas</p>
+<header>
+  <div class="header-logo">🐦</div>
+  <div class="header-app">Fluente</div>
+  <div class="header-sub">Aprenda Idiomas com IA</div>
+  <div class="header-badge">🗑️ Exclusão de Conta</div>
+</header>
+
+<div class="card">
+  <h2>Solicitar Exclusão de Conta</h2>
+  <p class="subtitle">
+    Você pode solicitar a exclusão permanente da sua conta e de todos os dados associados ao <strong>Fluente</strong>. Siga os passos abaixo:
+  </p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <strong>Clique no botão abaixo</strong>
+        <span>Um e-mail pré-preenchido será aberto automaticamente com o assunto <span class="highlight">"Excluir minha conta — Fluente"</span>.</span>
       </div>
     </div>
-
-    <h2 class="section-title">Solicitar Exclusão de Conta</h2>
-    <p class="section-sub">
-      Você pode solicitar a exclusão permanente da sua conta e de todos os dados associados ao aplicativo <strong>Fluente</strong>. Siga os passos abaixo:
-    </p>
-
-    <ol class="steps">
-      <li class="step">
-        <div class="step-num">1</div>
-        <div class="step-text">
-          Clique no botão abaixo para abrir um e-mail pré-preenchido com o assunto <span>"Excluir minha conta — Fluente"</span>.
-        </div>
-      </li>
-      <li class="step">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          Informe no e-mail o <span>endereço de e-mail cadastrado</span> na sua conta do Fluente para que possamos identificá-la.
-        </div>
-      </li>
-      <li class="step">
-        <div class="step-num">3</div>
-        <div class="step-text">
-          Envie o e-mail. Nossa equipe processará sua solicitação em até <span>30 dias</span> e confirmará a exclusão por e-mail.
-        </div>
-      </li>
-    </ol>
-
-    <div class="divider"></div>
-
-    <div class="what-deleted">
-      <h3>📦 O que será excluído:</h3>
-      <ul class="data-list">
-        <li class="data-item"><span class="icon">✅</span> E-mail e dados da conta</li>
-        <li class="data-item"><span class="icon">✅</span> Progresso, XP, streak e conquistas</li>
-        <li class="data-item"><span class="icon">✅</span> Histórias e lições concluídas</li>
-        <li class="data-item"><span class="icon">✅</span> Histórico de pronúncia e erros</li>
-        <li class="data-item"><span class="icon">✅</span> Dados de assinatura</li>
-      </ul>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <strong>Informe seu e-mail cadastrado</strong>
+        <span>Para que possamos identificar sua conta corretamente, informe o <span class="highlight">e-mail usado no cadastro</span> do Fluente.</span>
+      </div>
     </div>
-
-    <div class="retention-note">
-      🗓️ <strong>Período de retenção:</strong> Após a confirmação da solicitação, seus dados serão permanentemente excluídos em até <strong>30 dias</strong>.
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <strong>Envie e aguarde a confirmação</strong>
+        <span>Processaremos sua solicitação em até <span class="highlight">30 dias</span> e confirmaremos a exclusão por e-mail.</span>
+      </div>
     </div>
-
-    <div class="keep-note">
-      ⚠️ <strong>Atenção:</strong> A exclusão é permanente e irreversível. Seu progresso, XP e conquistas não poderão ser recuperados.
-    </div>
-
-    <a
-      class="btn"
-      href="mailto:vandomacielbr@gmail.com?subject=Excluir%20minha%20conta%20%E2%80%94%20Fluente&body=Ol%C3%A1%2C%0A%0ASolicito%20a%20exclus%C3%A3o%20permanente%20da%20minha%20conta%20no%20aplicativo%20Fluente.%0A%0AE-mail%20da%20conta%3A%20%5BSEU%20EMAIL%20AQUI%5D%0A%0ACompreendo%20que%20a%20exclus%C3%A3o%20%C3%A9%20permanente%20e%20irrevers%C3%ADvel.%0A%0AObrigado."
-    >
-      ✉️ Solicitar Exclusão de Conta
-    </a>
   </div>
 
-  <p class="footer">
-    Fluente — Aprenda Idiomas · vandomacielbr@gmail.com<br/>
-    Esta página está em conformidade com a LGPD e as políticas da Google Play Store.
-  </p>
+  <div class="divider"></div>
+
+  <div class="data-section">
+    <h3>✅ O que será excluído:</h3>
+    <div class="data-grid">
+      <div class="data-chip">📧 E-mail e dados da conta</div>
+      <div class="data-chip">⭐ XP, streak e conquistas</div>
+      <div class="data-chip">📚 Lições e leituras concluídas</div>
+      <div class="data-chip">🎙️ Histórico de pronúncia</div>
+      <div class="data-chip">💳 Dados de assinatura</div>
+      <div class="data-chip">📊 Relatórios de progresso</div>
+    </div>
+  </div>
+
+  <div class="alert alert-yellow">
+    <div class="alert-icon">🗓️</div>
+    <div><strong>Período de retenção:</strong> Após a confirmação, seus dados serão permanentemente excluídos em até <strong>30 dias</strong>.</div>
+  </div>
+
+  <div class="alert alert-red">
+    <div class="alert-icon">⚠️</div>
+    <div><strong>Atenção:</strong> A exclusão é permanente e irreversível. Seu progresso e conquistas não poderão ser recuperados.</div>
+  </div>
+
+  <a
+    class="btn"
+    href="mailto:vandomacielbr@gmail.com?subject=Excluir%20minha%20conta%20%E2%80%94%20Fluente&body=Ol%C3%A1%2C%0A%0ASolicito%20a%20exclus%C3%A3o%20permanente%20da%20minha%20conta%20no%20aplicativo%20Fluente.%0A%0AE-mail%20da%20conta%3A%20%5BINFORME%20SEU%20EMAIL%20AQUI%5D%0A%0ACompreendo%20que%20a%20exclus%C3%A3o%20%C3%A9%20permanente%20e%20irrevers%C3%ADvel.%0A%0AObrigado."
+  >
+    ✉️ Solicitar Exclusão de Conta
+  </a>
+
+  <a href="./politica-de-privacidade.html" class="back-link">📄 Ver Política de Privacidade completa</a>
+</div>
+
+<footer>
+  Fluente — Aprenda Idiomas · vandomacielbr@gmail.com<br/>
+  Em conformidade com a LGPD e as políticas da Google Play Store
+</footer>
 
 </body>
 </html>

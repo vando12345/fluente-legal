@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — Fluente</title>
+  <meta name="description" content="Política de Privacidade do aplicativo Fluente — Aprenda Idiomas." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple: #7c5ce3;
+      --purple-dark: #6a3fd4;
+      --purple-light: #ede9fc;
+      --bg: #f0ecf8;
+      --text: #1a1a2e;
+      --text-sec: #555;
+      --card: #ffffff;
+      --border: #e5e0fa;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    .header-logo { font-size: 52px; margin-bottom: 12px; }
+    .header-app  { font-size: 28px; font-weight: 900; letter-spacing: -0.5px; }
+    .header-sub  { font-size: 15px; font-weight: 600; opacity: 0.85; margin-top: 4px; }
+    .header-tag  {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* Meta info bar */
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--card);
+      border-radius: 18px;
+      padding: 18px 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(124,92,227,0.08);
+      border: 1px solid var(--border);
+    }
+    .meta-item { font-size: 13px; color: var(--text-sec); font-weight: 700; }
+    .meta-item strong { color: var(--purple); }
+
+    /* Section cards */
+    .section {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(124,92,227,0.07);
+      border: 1px solid var(--border);
+    }
+
+    .section-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      color: white;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 900;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .section-title-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--purple);
+      margin: 18px 0 8px;
+    }
+
+    h3:first-child { margin-top: 0; }
+
+    p, li {
+      font-size: 14px;
+      color: var(--text-sec);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    ul { padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    ul li::before { content: "✦ "; color: var(--purple); font-size: 12px; }
+
+    /* Alert boxes */
+    .alert {
+      display: flex;
+      gap: 12px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.6;
+    }
+    .alert-warning { background: #fef9c3; color: #854d0e; border-left: 4px solid #f59e0b; }
+    .alert-info    { background: var(--purple-light); color: #4c1d95; border-left: 4px solid var(--purple); }
+    .alert-success { background: #f0fdf4; color: #166534; border-left: 4px solid #22c55e; }
+    .alert-icon    { font-size: 20px; flex-shrink: 0; }
+
+    /* Tables */
+    .table-wrap { overflow-x: auto; margin-top: 14px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    th {
+      background: var(--purple-light);
+      color: var(--purple);
+      font-weight: 800;
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+      color: var(--text-sec);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #fafafa; }
+
+    /* Rights pills */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .right-pill {
+      background: var(--purple-light);
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--purple-dark);
+    }
+    .right-pill span { display: block; font-size: 11px; font-weight: 600; color: #6b7280; margin-top: 3px; }
+
+    /* Contact card */
+    .contact-card {
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      border-radius: 22px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      color: white;
+      text-align: center;
+    }
+    .contact-card h2 { color: white; }
+    .contact-card p { color: rgba(255,255,255,0.85); margin-top: 8px; }
+    .contact-email {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50px;
+      padding: 10px 24px;
+      font-size: 15px;
+      font-weight: 800;
+      color: white;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: background 0.2s;
+    }
+    .contact-email:hover { background: rgba(255,255,255,0.28); }
+
+    /* Delete button */
+    .cta-section {
+      text-align: center;
+      padding: 32px;
+      background: var(--card);
+      border-radius: 22px;
+      margin-bottom: 20px;
+      border: 2px dashed var(--border);
+    }
+    .cta-section p { margin-bottom: 16px; }
+    .btn-delete {
+      display: inline-block;
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(239,68,68,0.3);
+      transition: transform 0.15s;
+    }
+    .btn-delete:hover { transform: translateY(-2px); }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 600;
+      padding-bottom: 40px;
+    }
+
+    @media (max-width: 560px) {
+      .section { padding: 22px 18px; }
+      .container { padding: 24px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-logo">🐦</div>
+  <div class="header-app">Fluente</div>
+  <div class="header-sub">Aprenda Idiomas com IA</div>
+  <div class="header-tag">📄 Política de Privacidade</div>
+</header>
+
+<div class="container">
+
+  <!-- Meta info -->
+  <div class="meta-bar">
+    <div class="meta-item">📅 <strong>Atualizado:</strong> 21 de julho de 2026</div>
+    <div class="meta-item">📦 <strong>Pacote:</strong> com.fluente.app</div>
+    <div class="meta-item">👤 <strong>Desenvolvedor:</strong> Vando Maciel</div>
+    <div class="meta-item">✉️ <strong>Contato:</strong> vandomacielbr@gmail.com</div>
+  </div>
+
+  <!-- 1. Introdução -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">1</div>
+      <h2>Introdução</h2>
+    </div>
+    <p>Bem-vindo ao <strong>Fluente</strong>. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos as informações dos nossos usuários. Ao utilizar o aplicativo, você concorda com os termos descritos neste documento.</p>
+  </div>
+
+  <!-- 2. Dados Coletados -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">2</div>
+      <h2>Dados Coletados</h2>
+    </div>
+
+    <h3>2.1 Dados de Conta</h3>
+    <ul>
+      <li>Endereço de e-mail (identificador de login)</li>
+      <li>Senha (armazenada com hash bcrypt — nunca em texto plano)</li>
+      <li>Data de criação da conta</li>
+    </ul>
+
+    <h3>2.2 Dados de Uso e Progresso</h3>
+    <ul>
+      <li>Histórias e etapas de leitura concluídas</li>
+      <li>Lições e fases da Trilha completadas</li>
+      <li>Missões de pronúncia realizadas</li>
+      <li>Palavras consultadas no dicionário</li>
+      <li>Sequência de dias de estudo (streak) e XP acumulado</li>
+      <li>Erros de pronúncia para revisão inteligente</li>
+    </ul>
+
+    <h3>2.3 Dados de Voz (Microfone)</h3>
+    <p>O aplicativo solicita acesso ao microfone exclusivamente para avaliação de pronúncia, conversação com o tutor de IA e ditado.</p>
+    <div class="alert alert-info">
+      <div class="alert-icon">🎙️</div>
+      <div>As gravações de voz são processadas localmente no dispositivo. <strong>Nenhum áudio é armazenado em nossos servidores.</strong> O processamento é feito em tempo real e descartado imediatamente.</div>
+    </div>
+
+    <h3>2.4 Dados de Assinatura</h3>
+    <ul>
+      <li>Plano contratado e status da assinatura</li>
+      <li>Minutos de IA utilizados no período</li>
+      <li>Data de renovação</li>
+    </ul>
+    <div class="alert alert-warning">
+      <div class="alert-icon">⚠️</div>
+      <div>Não armazenamos dados de cartão de crédito. O pagamento é processado pela plataforma de distribuição (Google Play).</div>
+    </div>
+
+    <h3>2.5 Dados Técnicos (automáticos)</h3>
+    <ul>
+      <li>Identificador de sessão do dispositivo</li>
+      <li>Sistema operacional e versão do app</li>
+      <li>Idioma configurado no dispositivo</li>
+    </ul>
+  </div>
+
+  <!-- 3. Como usamos -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">3</div>
+      <h2>Como Usamos os Dados</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Finalidade</th><th>Base Legal</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Criar e autenticar sua conta</td><td>Execução de contrato</td></tr>
+          <tr><td>Salvar e sincronizar progresso</td><td>Execução de contrato</td></tr>
+          <tr><td>Personalizar conteúdo de aprendizado</td><td>Interesse legítimo</td></tr>
+          <tr><td>Avaliar pronúncia em tempo real</td><td>Consentimento (permissão de microfone)</td></tr>
+          <tr><td>Gerenciar assinatura</td><td>Execução de contrato</td></tr>
+          <tr><td>Melhorar o aplicativo</td><td>Interesse legítimo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 4. Compartilhamento -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">4</div>
+      <h2>Compartilhamento de Dados</h2>
+    </div>
+    <div class="alert alert-success">
+      <div class="alert-icon">🔒</div>
+      <div><strong>Não vendemos seus dados pessoais.</strong> Compartilhamos informações apenas com parceiros técnicos necessários para o funcionamento do app.</div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parceiro</th><th>Finalidade</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Supabase</strong></td><td>Banco de dados, autenticação e armazenamento de progresso</td></tr>
+          <tr><td><strong>ElevenLabs</strong></td><td>Síntese de voz para o tutor de IA</td></tr>
+          <tr><td><strong>Google (TTS/STT)</strong></td><td>Reconhecimento de fala nativo do Android</td></tr>
+          <tr><td><strong>Apple (TTS/STT)</strong></td><td>Reconhecimento de fala nativo do iOS</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 5. Segurança -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">5</div>
+      <h2>Armazenamento e Segurança</h2>
+    </div>
+    <ul>
+      <li>Dados armazenados na <strong>Supabase</strong> com criptografia TLS em trânsito e em repouso</li>
+      <li>Senhas armazenadas com <strong>hash bcrypt</strong> — nunca em texto plano</li>
+      <li>Acesso por autenticação <strong>JWT</strong> com tokens de curta duração</li>
+      <li>Revisões periódicas de segurança realizadas</li>
+    </ul>
+  </div>
+
+  <!-- 6. Retenção -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">6</div>
+      <h2>Retenção de Dados</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Tipo de dado</th><th>Período de retenção</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dados de conta e progresso</td><td>Enquanto a conta estiver ativa</td></tr>
+          <tr><td>Logs de uso</td><td>12 meses</td></tr>
+          <tr><td>Dados de voz</td><td>Não armazenados (tempo real)</td></tr>
+          <tr><td>Dados após exclusão de conta</td><td>Excluídos em até <strong>30 dias</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 7. Direitos -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">7</div>
+      <h2>Seus Direitos (LGPD / GDPR)</h2>
+    </div>
+    <div class="rights-grid">
+      <div class="right-pill">📋 Acesso <span>Solicitar cópia dos seus dados</span></div>
+      <div class="right-pill">✏️ Correção <span>Atualizar dados incorretos</span></div>
+      <div class="right-pill">🗑️ Exclusão <span>Solicitar remoção da conta</span></div>
+      <div class="right-pill">📦 Portabilidade <span>Exportar seus dados</span></div>
+      <div class="right-pill">🚫 Oposição <span>Opor-se a fins de marketing</span></div>
+      <div class="right-pill">↩️ Revogação <span>Retirar permissões concedidas</span></div>
+    </div>
+  </div>
+
+  <!-- 8. Permissões -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">8</div>
+      <h2>Permissões do Aplicativo (Android)</h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Permissão</th><th>Motivo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>RECORD_AUDIO</code></td><td>Avaliação de pronúncia e conversação com IA</td></tr>
+          <tr><td><code>INTERNET</code></td><td>Sincronização de progresso e acesso ao tutor de IA</td></tr>
+          <tr><td><code>MODIFY_AUDIO_SETTINGS</code></td><td>Ajuste de volume durante reprodução</td></tr>
+          <tr><td><code>FOREGROUND_SERVICE</code></td><td>Reprodução de áudio em segundo plano</td></tr>
+          <tr><td><code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code></td><td>Continuidade da reprodução com tela bloqueada</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 9. Crianças -->
+  <div class="section">
+    <div class="section-title-row">
+      <div class="section-num">9</div>
+      <h2>Privacidade de Crianças</h2>
+    </div>
+    <p>O Fluente é destinado a usuários com <strong>13 anos ou mais</strong>. Não coletamos intencionalmente dados de menores de 13 anos. Caso identificado, a conta será excluída imediatamente.</p>
+  </div>
+
+  <!-- Exclusão de conta CTA -->
+  <div class="cta-section">
+    <p><strong>Deseja excluir sua conta e todos os dados?</strong><br/>Sua solicitação será processada em até 30 dias.</p>
+    <a href="./delete-account.html" class="btn-delete">🗑️ Solicitar Exclusão de Conta</a>
+  </div>
+
+  <!-- Contato -->
+  <div class="contact-card">
+    <h2>📬 Dúvidas ou solicitações?</h2>
+    <p>Entre em contato com o desenvolvedor para exercer seus direitos ou tirar dúvidas sobre privacidade.</p>
+    <a href="mailto:vandomacielbr@gmail.com" class="contact-email">✉️ vandomacielbr@gmail.com</a>
+  </div>
+
+  <footer>
+    Fluente — Aprenda Idiomas · Desenvolvido por Vando Maciel<br/>
+    Em conformidade com a LGPD (Lei nº 13.709/2018) e o GDPR
+  </footer>
+
+</div>
+</body>
+</html>
